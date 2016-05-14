@@ -41,7 +41,7 @@ public class UploadStubTest {
 	}
 	@Test
 	public void testUpload() throws ServiceException, IOException {
-		String result = stub.upload("注意", "test/upload/1.txt");
+		String result = stub.upload("注意", "target/test-classes/upload1.txt");
 		assertEquals("注意不是所有的付出都有回报！", result);
 	}
 	private UploadStub stub;

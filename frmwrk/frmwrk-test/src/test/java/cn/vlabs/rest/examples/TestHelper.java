@@ -25,7 +25,7 @@ import cn.vlabs.rest.ServiceContext;
 public class TestHelper {
 	public static ServiceContext getContext(){
 		if (context==null){
-			context = new ServiceContext("http://localhost/framework/ServiceServlet");
+			context = new ServiceContext("http://localhost:8080/frmwrk/ServiceServlet");
 		}
 		return context;
 	}

@@ -52,9 +52,12 @@ public class FileExample {
 	}
 	@RestMethod("writeFile")
 	public IResource writeFile() throws FileNotFoundException{
-		File f = new File("c:\\1.txt");
+	    // String fn = "C:\\1.txt";
+	    String fn = "/tmp/1.txt";
+
+		File f = new File(fn);
 		StreamInfo stream = new StreamInfo();
-		stream.setFilename("c:\\1.txt");
+		stream.setFilename(fn);
 		stream.setLength(f.length());
 		stream.setMimeType("plain/text");
 		stream.setInputStream(new FileInputStream(f));
