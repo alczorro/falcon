@@ -9,7 +9,7 @@
     <dependency>
       <groupId>net.duckling</groupId>
       <artifactId>frmwork</artifactId>
-      <version>1.1</version>
+      <version>1.1.1</version>
     </dependency>
 
     <dependency>
