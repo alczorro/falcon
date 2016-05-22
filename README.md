@@ -14,7 +14,7 @@ Current modules:
 
 Cache
 -----
-
+```
 cache/src/main/java/
 └── net
     └── duckling
@@ -25,10 +25,10 @@ cache/src/main/java/
                 │       └── provider
                 └── idg
                     └── impl
-
+```
 Common
 ------
-
+```
 common/src/main/java/
 └── net
     └── duckling
@@ -37,10 +37,10 @@ common/src/main/java/
         └── falcon
             └── api
                 └── serialize
-
+```
 Lodetest
 --------
-
+```
 loadtest/src/main/java/
 ├── net
 │   └── duckling
@@ -54,10 +54,10 @@ loadtest/src/main/java/
 │                       └── tomcat
 └── org
     └── loadtest
-
+```
 MQ
 --
-
+```
 mq/src/main/java/
 └── net
     └── duckling
@@ -67,20 +67,20 @@ mq/src/main/java/
                 │   └── impl
                 └── taskq
                     └── impl
-
+```
 Mstatic
 -------
-
+```
 mstatic/src/main/java/
 └── net
     └── duckling
         └── falcon
             └── api
                 └── mstatic
-
+```
 ORM
 ---
-
+```
 orm/src/main/java/
 └── net
     └── duckling
@@ -88,14 +88,14 @@ orm/src/main/java/
             └── api
                 ├── boostrap
                 └── orm
-
+```
 XSS
 ---
-
+```
 xss/src/main/java/
 └── net
     └── duckling
         └── falcon
             └── xss
-
+```
 
