@@ -1,0 +1,4 @@
+
+Before run 'mvn', you may need 'install-dep.sh' to install local
+dependencies into local repository for maven.
+

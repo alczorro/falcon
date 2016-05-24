@@ -41,12 +41,21 @@ public class IDGeneratorServiceTest {
     @BeforeClass
     public static void setUp() throws Exception {
         TimeProfilable timeProfilable = new TimeProfilable() {
-            @Override
-            public Object invoke(String[] args) {
-                idg = new IDGeneratorService("10.10.1.35", 6379);
-                return null;
-            }
-        };
+		@Override
+		public Object invoke(String[] args) {
+		    String host=null, port=null;
+		    host = System.getenv("JUNIT_IDG_HOST");
+		    if (null != host) port = System.getenv("JUNIT_IDG_PORT");
+		    if (null != port) {
+			System.out.println("Host: "+host+" Port: "+port);
+			idg = new IDGeneratorService(host, Integer.parseInt(port));
+		    } else {
+			System.out.println("Please set env JUNIT_IDG_HOST and JUNIT_IDG_PORT for redis services, otherwise this test will be skipped.");
+			System.exit(0);
+		    }
+		    return null;
+		}
+	    };
         timeProfilable.profile("setUp");
     }
 
