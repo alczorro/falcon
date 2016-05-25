@@ -31,7 +31,20 @@ public class TaskQueueTest {
 
     @Before
     public void setUp() throws Exception {
-        p = new TaskProducer(host, port);
+	String env_port=null;	
+	host = System.getenv("JUNIT_DFMQ_HOST");
+	if (null != host) {
+	    env_port = System.getenv("JUNIT_DFMQ_PORT");
+	    if (null != env_port) {
+		System.out.println("Connect MQ with "+host
+				   +":"+env_port);
+		port = Integer.parseInt(env_port);
+		p = new TaskProducer(host, port);
+		return;
+	    }
+	}
+	System.out.println("Please set env for JUNIT_DFMQ_HOST, JUNIT_DFMQ_PORT. Otherwise this test will be skipped.");
+	System.exit(0);       
     }
 
     @After

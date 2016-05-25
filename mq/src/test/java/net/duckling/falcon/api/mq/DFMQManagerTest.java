@@ -28,7 +28,22 @@ public class DFMQManagerTest {
     
     @Before
     public void setUp() throws Exception {
-        m = new DFMQManager("guest", "guest", "10.10.2.6");
+	String username=null, password=null, host=null;
+	username = System.getenv("JUNIT_DFMQ_USER");
+	if (null != username) {
+	    password = System.getenv("JUNIT_DFMQ_PASS");
+	    if (null != password) {
+		host = System.getenv("JUNIT_DFMQ_HOST");
+		if (null != host) {
+		    System.out.println("Connect MQ with "+username
+				       +":"+password+"@"+host);
+		    m = new DFMQManager(username, password, host);
+		    return;
+		}
+	    }
+	}
+	System.out.println("Please set env for JUNIT_DFMQ_USER, JUNIT_DFMQ_PASS and JUNIT_DFMQ_HOST. Otherwise this test will be skipped.");
+	System.exit(0);       
     }
 
     @Test
